@@ -111,7 +111,7 @@ namespace ExpressionEvaluator.UI.Win
 
         private void btnResult_Click(object sender, EventArgs e)
         {
-            txtDisplay.Text += $"={Evaluator.Evaluate(txtDisplay.Text)}";
+            txtDisplay.Text += $" = {Evaluator.Evaluate(txtDisplay.Text)}";
         }
     }
 }
