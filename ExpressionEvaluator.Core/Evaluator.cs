@@ -18,7 +18,8 @@ public class Evaluator
         {
             char item = infix[i];
 
-            if (char.IsDigit(item) || item == '.')
+            // If what I'm reading is a digit or a period, keep reading until the entire number is finished.
+            if (char.IsDigit(item) || item == '.') 
             {
                 string number = "";
                 while (i < infix.Length && (char.IsDigit(infix[i]) || infix[i] == '.'))
