@@ -14,7 +14,7 @@ public class Evaluator
         var stack = new Stack<char>();
 
         int i = 0;
-        while (i < infix.Length)
+        while (i < infix.Length) // Change
         {
             char item = infix[i];
 
@@ -26,7 +26,7 @@ public class Evaluator
                     number += infix[i];
                     i++;
                 }
-                postFix += number + " ";
+                postFix += number + " "; // here
                 continue;
             }
             if (IsOperator(item))
@@ -41,7 +41,7 @@ public class Evaluator
                     {
                         do
                         {
-                            postFix += stack.Pop() + " "; // acá
+                            postFix += stack.Pop() + " "; // here
                         } while (stack.Peek() != '(');
                         stack.Pop();
                     }
@@ -53,7 +53,7 @@ public class Evaluator
                         }
                         else
                         {
-                            postFix += stack.Pop() + " "; // acá
+                            postFix += stack.Pop() + " "; // here
                             stack.Push(item);
                         }
                     }
@@ -63,7 +63,7 @@ public class Evaluator
         }
         while (stack.Count > 0)
         {
-            postFix += stack.Pop() + " "; // acá
+            postFix += stack.Pop() + " "; // here
         }
         return postFix;
     }
@@ -93,7 +93,7 @@ public class Evaluator
     private static double EvaluatePostfix(string postfix)
     {
         var stack = new Stack<double>();
-        foreach (string token in postfix.Split(' ', StringSplitOptions.RemoveEmptyEntries)) // cambio
+        foreach (string token in postfix.Split(' ', StringSplitOptions.RemoveEmptyEntries)) // Change
         {
             if (token.Length == 1 && IsOperator(token[0]))
             {
@@ -111,7 +111,7 @@ public class Evaluator
             }
             else
             {
-                stack.Push(double.Parse(token, System.Globalization.CultureInfo.InvariantCulture)); // cambio
+                stack.Push(double.Parse(token, System.Globalization.CultureInfo.InvariantCulture)); // Change
             }
         }
         return stack.Pop();

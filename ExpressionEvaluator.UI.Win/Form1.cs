@@ -9,7 +9,7 @@ namespace ExpressionEvaluator.UI.Win
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e) // Boton 7
+        private void button1_Click(object sender, EventArgs e) // Button 7
         {
             txtDisplay.Text += "7";
         }
